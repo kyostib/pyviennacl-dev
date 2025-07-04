@@ -41,7 +41,7 @@ class NumpyExtension(Extension):
         del self.include_dirs  # restore overwritten property
 
     def get_numpy_incpath(self):
-        from imp import find_module
+        from importlib import find_module
         # avoid actually importing numpy, it screws up distutils
         file, pathname, descr = find_module("numpy")
         from os.path import join
